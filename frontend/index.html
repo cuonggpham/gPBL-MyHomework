@@ -28,12 +28,148 @@
         <meta name="theme-color" content="#ffffff" />
 
         <!-- Font -->
-        <link rel="stylesheet" href="./assets/font/stylesheet.css" />
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./js/GetProducts.js" defer></script>
+        <script src="./assets/js/scripts.js"></script>
     </head>
+
     <body>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cumque
-        odio ab quasi, ipsam excepturi optio nam distinctio omnis adipisci
-        inventore praesentium, sapiente doloremque. Blanditiis exercitationem
-        similique molestiae tenetur totam!
+        <!-- Header -->
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "./templates/header.html");
+        </script>
+
+        <!-- Main -->
+        <div class="container home">
+            <section class="home__container">
+                <!-- Row 1 -->
+                <div class="row">
+                    <!-- Hero content -->
+                    <div class="col-6 main-page">
+                        <h1 class="main-page__title">
+                            The best market for you to find
+                            <span
+                                style="
+                                    color: var(--text-theme-color);
+                                    text-decoration: underline;
+                                "
+                                >DATA
+                            </span>
+                        </h1>
+                        <p class="main-page__desc">
+                            The easy and straightforward way to find, compare,
+                            and access data products from over 500 top data
+                            providers around the world, allowing you to make
+                            quick, accurate, and well-informed decisions, and
+                            helping you manage your data needs effectively and
+                            efficiently.
+                        </p>
+                        <div class="main-page__search">
+                            <img
+                                src="./assets/icons/search.svg"
+                                alt=""
+                                class="main-page__search--icon"
+                            />
+                            <form action="" class="search">
+                                <input
+                                    type="text"
+                                    name=""
+                                    id="full-name"
+                                    placeholder="Search for data"
+                                    class="form__input"
+                                    required=""
+                                />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Hero media -->
+                    <div class="col-6 main-page main-page__media">
+                        <div class="main-page__img-container">
+                            <img
+                                src="./assets/img/markat_logo.jpg"
+                                alt=""
+                                class="main-page__img"
+                            />
+                            <img
+                                src="./assets/img/mainpage-img.webp"
+                                alt=""
+                                class="main-page__img"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="row">
+                    <!-- Hero content -->
+                    <div class="col-6 main-page">
+                        <h1 class="main-page__title">
+                            The best market to find
+                            <span
+                                style="
+                                    color: var(--text-theme-color);
+                                    text-decoration: underline;
+                                "
+                                >DATA
+                            </span>
+                        </h1>
+                        <p class="main-page__desc">
+                            The easy way to find, compare, and access data
+                            products from 500+ premium data providers across the
+                            globe.
+                        </p>
+                        <div class="main-page__search">
+                            <img
+                                src="./assets/icons/search.svg"
+                                alt=""
+                                class="main-page__search--icon"
+                            />
+                            <form action="" class="search">
+                                <input
+                                    type="text"
+                                    name=""
+                                    id="full-name"
+                                    placeholder="Search for data"
+                                    class="form__input"
+                                    required=""
+                                />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Hero media -->
+                    <div class="col-6 main-page main-page__media">
+                        <div class="main-page__img-container">
+                            <img
+                                src="./assets/img/markat_logo.jpg"
+                                alt=""
+                                class="main-page__img"
+                            />
+                            <img
+                                src="./assets/img/mainpage-img.webp"
+                                alt=""
+                                class="main-page__img"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section></section>
+
+            <div class="row"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer"></footer>
+        <script>
+            load("#footer", "./templates/footer.html");
+        </script>
     </body>
 </html>
