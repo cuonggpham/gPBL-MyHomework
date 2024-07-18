@@ -6,21 +6,49 @@
 }
 
 // Common
+.main-first {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 30px 0;
+}
+
+.main-second {
+    width: 100%;
+    background-color: rgb(246, 242, 218);
+    padding: 100px 0;
+}
+
+.main-third {
+    width: 100%;
+    background-color: rgb(220, 243, 219);
+    padding: 100px 0;
+}
+
 .navbar {
     a:hover {
         transition: 0.2s;
-        color: #82defc;
+        color: var(--text-theme-color);
     }
+}
+
+#about-app {
+    scroll-margin-top: 100px;
+}
+
+#view-homework,
+#add-new {
+    scroll-margin-top: 80px;
 }
 
 //
 
 .header {
     position: sticky;
-    top: -11px;
+    top: -8px;
     z-index: 2;
     background-color: rgba(245, 245, 245, 0.95);
     // background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0.5px 0.5px 4px 4px #ccc;
 }
 
 .top-bar {
@@ -48,13 +76,16 @@
 .logo {
     &__img {
         margin-top: 1px;
-        width: 255px;
+        width: 200px;
         height: 60px;
         object-fit: cover;
         margin-left: -6px;
     }
 
     &__img--signin {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
         margin-top: 40px;
     }
 }
@@ -75,10 +106,14 @@
     }
 
     &__link {
-        padding: 0 30px;
+        padding: 0 15px 0 15px;
         color: black;
         font-size: 16px;
         font-weight: 600;
+    }
+
+    &__link:first-of-type {
+        margin-left: 45px;
     }
 }
 
@@ -209,10 +244,6 @@
     }
 }
 
-.row {
-    margin-top: 40px;
-}
-
 .small-banner {
     width: 555px;
     height: 350px;
@@ -229,7 +260,7 @@
 .main-page {
     margin: 0px 0 50px 0;
     &__title {
-        font-size: 58px;
+        font-size: 55px;
         line-height: 80px;
         font-weight: 600;
         margin-top: 40px;
@@ -238,7 +269,7 @@
     &__desc {
         font-size: 18px;
         line-height: 30px;
-        margin: 25px 0;
+        margin: 20px 0;
     }
 
     &__media {
@@ -259,13 +290,20 @@
 
     &__img:last-child {
         width: 500px;
-        height: 350px;
+        height: 400px;
         object-fit: cover;
         position: absolute;
         bottom: 30px;
         right: -50px;
         z-index: 0;
         border-radius: 8px;
+    }
+
+    &__kid {
+        position: absolute;
+        z-index: 1;
+        bottom: 30px;
+        right: 40px;
     }
 
     &__img-container {
@@ -286,5 +324,18 @@
             margin: 10px;
             width: 16px;
         }
+    }
+
+    &__view-homework {
+        width: 500px;
+        height: 400px;
+        border-radius: 10px;
+    }
+
+    &__add-new {
+        width: 500px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
     }
 }
