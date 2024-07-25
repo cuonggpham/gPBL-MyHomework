@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign up | The Coffee House</title>
+
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="../assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="../assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Font -->
+        <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="../assets/css/main.css" />
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../js/SignUp.js" defer></script>
+        <script src="../assets/js/scripts.js"></script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "../templates/header-logined.html");
+        </script>
+
+        <!-- Main -->
+        <div class="main-first" id="about-app">
+            <div class="container">
+                <div class="row">
+                    <!-- Hero title -->
+                    <div class="col-12">
+                        <h1 class="page__title">Finished Homework</h1>
+                    </div>
+                    <div class="row order">
+                        <p class="order__title">Sort by</p>
+                        <div class="order-options">
+                            <div class="btn" data-sort="">
+                                <p class="order__text">Due date</p>
+                            </div>
+                            <div class="btn">
+                                <p class="order__text">Priority</p>
+                            </div>
+                            <!-- <div class="btn" data-sort="price_desc">
+                                <p class="order__text">Giá giảm dần</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul class="col-12 homework__list">
+                        <a href="./homework-details.html">
+                            <li class="homework__item">
+                                <div class="homework__container">
+                                    <div class="col-2 homework__media">
+                                        <img
+                                            src="/assets/img/calculus1.png"
+                                            alt=""
+                                            class="homework__img"
+                                        />
+                                    </div>
+                                    <div class="col-10 homework__content">
+                                        <h2 class="homework__title">
+                                            Calculus I: Limits and continuity
+                                        </h2>
+                                        <div class="homework__desc">
+                                            <p class="homework__duedate">
+                                                Due at: 07/29/2024
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer"></footer>
+        <script>
+            load("#footer", "../templates/footer.html");
+        </script>
+    </body>
+</html>

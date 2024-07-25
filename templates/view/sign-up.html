@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign up | The Coffee House</title>
+
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="../assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="../assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Font -->
+        <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="../assets/css/main.css" />
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../js/SignUp.js" defer></script>
+        <script src="../assets/js/scripts.js"></script>
+    </head>
+
+    <body>
+        <main class="auth">
+            <div class="auth__content">
+                <div class="auth__content-inner auth__logo-signup">
+                    <a href="../index.html" class="logo">
+                        <img
+                            src="../assets/img/myhomework-logo.png"
+                            alt=""
+                            class="logo__img logo__img--signin"
+                        />
+                    </a>
+                    <h1 class="auth__heading">Sign up</h1>
+                    <p class="auth__desc">Join My Homework!</p>
+                    <form
+                        action="./index-logined.html"
+                        id="signUpForm"
+                        class="form auth__form"
+                    >
+                        <div class="form__text-input">
+                            <input
+                                type="text"
+                                name=""
+                                id="sdt"
+                                placeholder="Phone number"
+                                class="form__input"
+                                required
+                                minlength="10"
+                                autocomplete="sdt"
+                            />
+                            <img src="" alt="" class="form__input-icon" />
+                        </div>
+                        <p class="form__error">At least 10 digits</p>
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="password"
+                                    name=""
+                                    id="password"
+                                    placeholder="Password"
+                                    class="form__input"
+                                    required
+                                    minlength="6"
+                                    autocomplete="new-password"
+                                />
+                                <img src="" alt="" class="form__input-icon" />
+                            </div>
+                            <p class="form__error">At least 6 digits</p>
+                        </div>
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="password"
+                                    name=""
+                                    id="re_password"
+                                    placeholder="Confirm password"
+                                    class="form__input"
+                                    required
+                                    autocomplete="new-password"
+                                />
+                                <img src="" alt="" class="form__input-icon" />
+                            </div>
+                            <p class="form__error">At least 6 digits</p>
+                        </div>
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="Full Name"
+                                    class="form__input"
+                                    required
+                                />
+                                <img src="" alt="" class="form__input-icon" />
+                            </div>
+                            <p class="form__error">Tên không được để trống</p>
+                        </div>
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="text"
+                                    name="address"
+                                    id="address"
+                                    placeholder="Address"
+                                    class="form__input"
+                                    required
+                                />
+                                <img src="" alt="" class="form__input-icon" />
+                            </div>
+                            <p class="form__error">
+                                Địa chỉ không được để trống
+                            </p>
+                        </div>
+                        <div class="form__group form__group--inline">
+                            <label class="form__checkbox">
+                                <input
+                                    type="checkbox"
+                                    name=""
+                                    id=""
+                                    class="form__checkbox-input"
+                                />
+                                <span class="form__checkbox-label"
+                                    >Set as default password
+                                </span>
+                            </label>
+                            <a href="" class="auth__link">Recover password </a>
+                        </div>
+                        <div class="form__group auth__btn-group">
+                            <button
+                                type="submit"
+                                class="btn btn--primary auth__btn form__submit-btn"
+                            >
+                                Sign up
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="auth__text">
+                        You've already had an account?
+                        <a href="./sign-in.html" class="auth__link">Sign in</a>
+                    </div>
+                    <p style="color: red" id="signUpResult"></p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

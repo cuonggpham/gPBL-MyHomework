@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign in | The Coffee House</title>
+
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="../assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="../assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Font -->
+        <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="../assets/css/main.css" />
+
+        <!-- Scripts -->
+        <script src="../assets/js/scripts.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../js/Login.js" defer></script>
+    </head>
+
+    <body>
+        <main class="auth">
+            <div class="auth__content">
+                <div class="auth__content-inner">
+                    <a href="../index.html" class="logo">
+                        <img
+                            src="../assets/img/myhomework-logo.png"
+                            alt=""
+                            class="logo__img logo__img--signin"
+                        />
+                    </a>
+                    <h1 class="auth__heading auth__heading--signin">Sign in</h1>
+                    <p class="auth__desc">Welcome back!</p>
+                    <form action="./index-logined.html" class="form auth__form">
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="text"
+                                    id="sdt"
+                                    placeholder="Phone number"
+                                    class="form__input"
+                                    required
+                                    autocomplete="username"
+                                />
+                                <img src="" alt="" class="form__input-icon" />
+                            </div>
+                            <p class="form__error">
+                                Phone number was not in a correct format
+                            </p>
+                        </div>
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Password"
+                                    class="form__input"
+                                    required
+                                    minlength="6"
+                                    autocomplete="current-password"
+                                />
+                                <img src="" alt="" class="form__input-icon" />
+                            </div>
+                            <p class="form__error">At least 6 digits</p>
+                        </div>
+
+                        <div class="form__group form__group--inline">
+                            <a href="" class="auth__link auth__link--signin"
+                                >Forgot your password?</a
+                            >
+                        </div>
+                        <a href="./index-logined.html">
+                            <button
+                                class="btn btn--outline auth__btn btn--no-margin"
+                            >
+                                Sign in
+                            </button>
+                        </a>
+                        <a href="./sign-up.html">
+                            <div class="form__group auth__btn-group">
+                                <button type="button" class="btn btn--primary">
+                                    Sign up
+                                </button>
+                            </div>
+                        </a>
+                    </form>
+                    <p style="color: red" id="loginResult"></p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
