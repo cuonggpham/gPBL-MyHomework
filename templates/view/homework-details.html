@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign up | The Coffee House</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up | The Coffee House</title>
 
-        {% load static %}
+    {% load static %}
 
-        <!-- Favicon -->
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="{% static 'assets/favicon/apple-touch-icon.png' %}"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="{% static 'assets/favicon/favicon-32x32.png' %}"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="{% static 'assets/favicon/favicon-16x16.png' %}"
-        />
-        <link rel="manifest" href="../assets/favicon/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'assets/favicon/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'assets/favicon/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'assets/favicon/favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-        <!-- Font -->
-        <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
+    <!-- Font -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="../js/SignUp.js" defer></script>
-        <script src="../assets/js/scripts.js"></script>
-    </head>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/SignUp.js" defer></script>
+    <script src="../assets/js/scripts.js"></script>
+  </head>
 
-    <body>
-        <!-- Header -->
-        <header id="header" class="header"></header>
-        <script>
-            load("#header", "../templates/header-logined.html");
-        </script>
+  <body>
+    <!-- Header -->
+    <header id="header" class="header"></header>
+    {% include '../templates/header.html' %}
 
         <!-- Main -->
         <div class="main-first" id="about-app">
@@ -76,24 +74,18 @@
                 <div class="row detail__options">
                     <!-- actionにすることによって今のURLに付け足すのではなくview_homeworkにリダイレクトする-->
                     <!-- redirect to view/view-homework.html -->
-                    <form action="{% url 'finished_homework' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="homework_id" value="{{ homework.id }}" />
+                    <a href="{% url 'finished_homework' %}">
                         <button class="btn btn--primary">Finish</button>
-                    </form>
-                    <form action="{% url 'view_homework' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="homework_id" value="{{ homework.id }}" />
-                        <button class="btn btn--primary">Delete</button>
-                    </form>
+                    </a>
+                    <a href="{% url 'view_homework' %}">
+                        <button class="btn btn--danger">Delete</button>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer id="footer"></footer>
-        <script>
-            load("#footer", "../templates/footer.html");
-        </script>
-    </body>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    {% include '../templates/footer.html' %}
+  </body>
 </html>
