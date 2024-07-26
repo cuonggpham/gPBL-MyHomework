@@ -14,6 +14,12 @@ def index_logined(request):
     return render(request, 'view/index-logined.html')
 
 def view_homework(request):
+    #引き数でhomework_idが来た場合のみにこのif文を実行（そのhomeworkを削除）
+    if request.method == 'POST':
+        homework_id = request.POST.get('homework_id')
+        if homework_id:
+            homework = get_object_or_404(Homework, id=homework_id)
+            homework.delete()
     #finishedがFalseのHomeworkのみをデータベースから持ってくる
     homework_list = Homework.objects.filter(finished=False)
     context = { 'homework_list':homework_list }
@@ -28,6 +34,12 @@ def homework_details(request, id):
     return render(request, 'view/homework-details.html', context)
 
 def finished_homework(request):
+    #引数でhomework_idをもらう、その宿題のfinishedを０から１に変える（finished画面だけに表示されるようになる）
+    if request.method == 'POST':
+        homework_id = request.POST.get('homework_id')
+        homework = get_object_or_404 (Homework, id=homework_id)
+        homework.finished = True
+        homework.save()
     #finishedがTrueのHomeworkのみをデータベースから持ってくる
     finished_list = Homework.objects.filter(finished=True)
     context = { 'finished_list':finished_list }

@@ -21,5 +21,5 @@ urlpatterns = [
 
     path('view/homework-details.html/<int:id>/', views.homework_details, name='homework_details'),
 
-    path('view/finished-homework.html', views.finished_homework, name='finished_homework')
+    path('view/finished-homework.html', views.finished_homework, name='finished_homework'),
 ]
