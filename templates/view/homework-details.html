@@ -74,12 +74,16 @@
                 <div class="row detail__options">
                     <!-- actionにすることによって今のURLに付け足すのではなくview_homeworkにリダイレクトする-->
                     <!-- redirect to view/view-homework.html -->
-                    <a href="{% url 'finished_homework' %}">
+                    <form action="{% url 'finished_homework' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="homework_id" value="{{ homework.id }}" />
                         <button class="btn btn--primary">Finish</button>
-                    </a>
-                    <a href="{% url 'view_homework' %}">
-                        <button class="btn btn--danger">Delete</button>
-                    </a>
+                    </form>
+                    <form action="{% url 'view_homework' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="homework_id" value="{{ homework.id }}" />
+                        <button class="btn btn--primary">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>
