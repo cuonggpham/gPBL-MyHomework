@@ -50,9 +50,7 @@
     <body>
         <!-- Header -->
         <header id="header" class="header"></header>
-        <script>
-            load("#header", "../templates/header-logined.html");
-        </script>
+        {% include '../templates/header.html' %}
 
         <!-- Main -->
         <div class="main-first" id="about-app">
@@ -217,8 +215,6 @@
 
         <!-- Footer -->
         <footer id="footer"></footer>
-        <script>
-            load("#footer", "../templates/footer.html");
-        </script>
+        {% include '../templates/footer.html' %}
     </body>
 </html>
