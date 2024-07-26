@@ -57,12 +57,12 @@
                     <div class="row order">
                         <p class="order__title">Sort by</p>
                         <div class="order-options">
-                            <div class="btn" data-sort="">
+                            <a href="{% url 'view_homework' %}?sort_by=due_date" class="btn {% if request.GET.sort_by == 'due_date' %}active{% endif %}">
                                 <p class="order__text">Due date</p>
-                            </div>
-                            <div class="btn">
+                            </a>
+                            <a href="{% url 'view_homework' %}?sort_by=priority" class="btn {% if request.GET.sort_by == 'priority' %}active{% endif %}">
                                 <p class="order__text">Priority</p>
-                            </div>
+                            </a>
                             <!-- <div class="btn" data-sort="price_desc">
                                 <p class="order__text">Giá giảm dần</p>
                             </div> -->
