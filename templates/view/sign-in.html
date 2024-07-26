@@ -5,33 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sign in | The Coffee House</title>
 
+        {% load static %}
+
         <!-- Favicon -->
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="../assets/favicon/apple-touch-icon.png"
+            href="{% static 'assets/favicon/apple-touch-icon.png' %}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="../assets/favicon/favicon-32x32.png"
+            href="{% static 'assets/favicon/favicon-32x32.png' %}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="../assets/favicon/favicon-16x16.png"
+            href="{% static 'assets/favicon/favicon-16x16.png' %}"
         />
         <link rel="manifest" href="../assets/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
         <!-- Font -->
-        <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+        <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
 
         <!-- Styles -->
-        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
         <!-- Scripts -->
         <script src="../assets/js/scripts.js" defer></script>
@@ -43,9 +45,9 @@
         <main class="auth">
             <div class="auth__content">
                 <div class="auth__content-inner">
-                    <a href="../index.html" class="logo">
+                    <a href="/" class="logo">
                         <img
-                            src="../assets/img/myhomework-logo.png"
+                            src="{% static 'assets/img/myhomework-logo.png' %}"
                             alt=""
                             class="logo__img logo__img--signin"
                         />

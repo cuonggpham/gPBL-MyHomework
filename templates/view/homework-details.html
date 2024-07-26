@@ -5,33 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sign up | The Coffee House</title>
 
+        {% load static %}
+
         <!-- Favicon -->
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="../assets/favicon/apple-touch-icon.png"
+            href="{% static 'assets/favicon/apple-touch-icon.png' %}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="../assets/favicon/favicon-32x32.png"
+            href="{% static 'assets/favicon/favicon-32x32.png' %}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="../assets/favicon/favicon-16x16.png"
+            href="{% static 'assets/favicon/favicon-16x16.png' %}"
         />
         <link rel="manifest" href="../assets/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
         <!-- Font -->
-        <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+        <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
 
         <!-- Styles -->
-        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -53,28 +55,31 @@
                     <!-- Hero title -->
                     <div class="col-12">
                         <h1 class="page__title">
-                            Calculus I: Limits and continuity
+                            {{ homework.name }}
                         </h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 detail">
-                        <p>Due at: 29 July 2024 23:59</p>
-                        <div class="detail__instructions">Instructions:</div>
-                        <div class="detail__media">
-                            <img
-                                src="../assets/img/calculus-prob.png"
-                                alt=""
-                                class="detail__img"
-                            />
+                        <p>Due at: {{ homework.due_date|date:"m/d/Y" }}</p>
+                        {% if homework.note %}
+                        <p class="homework__note">
+                            Note: {{ homework.note }}
+                        </p>
+                        {% endif %}
+                        <div class="homework__info">
+                            <p> Difficulty: {{ homework.difficulty }} </p>
+                            <p> Priority: {{ homework.priority }} </p>
                         </div>
                     </div>
                 </div>
                 <div class="row detail__options">
-                    <a href="finished-homework.html">
+                    <!-- actionにすることによって今のURLに付け足すのではなくview_homeworkにリダイレクトする-->
+                    <!-- redirect to view/view-homework.html -->
+                    <a href="{% url 'finished_homework' %}">
                         <button class="btn btn--primary">Finish</button>
                     </a>
-                    <a href="view-homework.html">
+                    <a href="{% url 'view_homework' %}">
                         <button class="btn btn--danger">Delete</button>
                     </a>
                 </div>
