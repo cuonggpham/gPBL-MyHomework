@@ -20,8 +20,13 @@ def view_homework(request):
         if homework_id:
             homework = get_object_or_404(Homework, id=homework_id)
             homework.delete()
+
+    sort_by = request.GET.get('sort_by','priority')
+    if sort_by == 'due_date':
+        homework_list = Homework.objects.filter(finished=False).order_by('due_date')
+    else:
+        homework_list = Homework.objects.filter(finished=False).order_by('priority')
     #finishedがFalseのHomeworkのみをデータベースから持ってくる
-    homework_list = Homework.objects.filter(finished=False)
     context = { 'homework_list':homework_list }
     return render(request, 'view/view-homework.html', context)
 
