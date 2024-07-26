@@ -5,39 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>My Homework</title>
 
+        {% load static %}
+
         <!-- Favicon -->
         <link
             rel="icon"
             type="image/x-icon"
-            href="../assets/favicon/favicon.ico"
+            href="{% static 'assets/favicon/favicon.ico' %}"
         />
 
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="../assets/favicon/apple-touch-icon.png"
+            href="{% static 'assets/favicon/apple-touch-icon.png' %}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="../assets/favicon/favicon-32x32.png"
+            href="{% static 'assets/favicon/favicon-32x32.png' %}"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="../assets/favicon/favicon-16x16.png"
+            href="{% static 'assets/favicon/favicon-16x16.png' %}"
         />
         <link rel="manifest" href="../assets/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
         <!-- Font -->
-        <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+        <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
 
         <!-- Styles -->
-        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -89,7 +91,7 @@
                         </p>
                         <div class="main-page__search">
                             <img
-                                src="../assets/icons/search.svg"
+                                src="{% static 'assets/icons/search.svg' %}"
                                 alt=""
                                 class="main-page__search--icon"
                             />
@@ -109,12 +111,12 @@
                     <div class="col-6 main-page main-page__media">
                         <div class="main-page__img-container">
                             <img
-                                src="../assets/img/myhomework-logo.png"
+                                src="{% static 'assets/img/myhomework-logo.png' %}"
                                 alt=""
                                 class="main-page__img"
                             />
                             <img
-                                src="../assets/img/kid.svg"
+                                src="{% static 'assets/img/kid.svg' %}"
                                 alt=""
                                 class="main-page__kid"
                             />
@@ -160,7 +162,7 @@
                     <!-- Hero media -->
                     <div class="col-6 main-page__media">
                         <img
-                            src="../assets/img/viewhomework.png"
+                            src="{% static 'assets/img/viewhomework.png' %}"
                             alt=""
                             class="main-page__view-homework"
                         />
@@ -190,7 +192,7 @@
                     <!-- Hero media -->
                     <div class="col-6 main-page__media">
                         <img
-                            src="../assets/img/addnew.png"
+                            src="{% static 'assets/img/addnew.png' %}"
                             alt=""
                             class="main-page__add-new"
                         />
