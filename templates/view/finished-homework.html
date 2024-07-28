@@ -59,7 +59,6 @@
                 <div class="row">
                     <ul class="col-12 homework__list">
                         {% for homework in finished_list %}
-                        <a href="{% url 'homework_details' homework.id %}">
                             <li class="homework__item">
                                 <div class="homework__container">
                                     <div class="col-10 homework__content">
@@ -79,7 +78,6 @@
                                     </div>
                                 </div>
                             </li>
-                        </a>
                         {% empty %}
                         <li class="homework__item">
                             <div class="homework__container">
