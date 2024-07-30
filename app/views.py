@@ -1,15 +1,34 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .models import Homework
-from .forms import HomeworkForm
+from .forms import HomeworkForm,SignUpForm
 
 def home(request):
     return render(request, 'index.html')
 
 def sign_in(request):
-    return render(request, 'view/sign-in.html')
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('index_logined')  # 成功後にリダイレクトする URL
+    else:
+        form = AuthenticationForm()
+    return render(request, 'view/sign-in.html', {'form': form})
+
 def sign_up(request):
-    return render(request, 'view/sign-up.html')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index_logined')  # 成功後にリダイレクトする URL
+    else:
+        form = UserCreationForm()
+    return render(request, 'view/sign-up.html', {'form': form})
 
 def index_logined(request):
     return render(request, 'view/index-logined.html')
