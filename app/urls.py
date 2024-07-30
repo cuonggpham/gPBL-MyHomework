@@ -9,11 +9,11 @@ urlpatterns = [
 
     path('', views.home),
 
-    path('view/sign-in.html', views.sign_in),
+    path('view/sign-in.html', views.sign_in, name='sign_in'),
 
-    path('view/sign-up.html', views.sign_up),
+    path('view/sign-up.html', views.sign_up, name='sign_up'),
 
-    path('view/index-logined.html', views.index_logined),
+    path('view/index-logined.html', views.index_logined, name='index_logined'),
 
     path('view/view-homework.html', views.view_homework, name='view_homework'),
 
@@ -21,5 +21,7 @@ urlpatterns = [
 
     path('view/homework-details.html/<int:id>/', views.homework_details, name='homework_details'),
 
-    path('view/finished-homework.html', views.finished_homework, name='finished_homework')
+    path('view/finished-homework.html', views.finished_homework, name='finished_homework'),
+
+    path('delete_homework/', views.delete_homework, name='delete_homework')
 ]

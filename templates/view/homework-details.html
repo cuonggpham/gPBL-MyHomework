@@ -46,44 +46,47 @@
     <header id="header" class="header"></header>
     {% include '../templates/header.html' %}
 
-    <!-- Main -->
-    <div class="main-first" id="about-app">
-      <div class="container">
-        <div class="row">
-          <!-- Hero title -->
-          <div class="col-12">
-            <h1 class="page__title">{{ homework.name }}</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 detail">
-            <p>Due at: {{ homework.due_date|date:"m/d/Y" }}</p>
-            {% if homework.note %}
-            <p class="homework__note">Note: {{ homework.note }}</p>
-            {% endif %}
-            <div class="homework__info">
-              <p>Difficulty: {{ homework.difficulty }}</p>
-              <p>Priority: {{ homework.priority }}</p>
+        <!-- Main -->
+        <div class="main-first" id="about-app">
+            <div class="container">
+                <div class="row">
+                    <!-- Hero title -->
+                    <div class="col-12">
+                        <h1 class="page__title">
+                            {{ homework.name }}
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 detail">
+                        <p>Due at: {{ homework.due_date|date:"m/d/Y" }}</p>
+                        {% if homework.note %}
+                        <p class="homework__note">
+                            Note: {{ homework.note }}
+                        </p>
+                        {% endif %}
+                        <div class="homework__info">
+                            <p> Difficulty: {{ homework.difficulty }} </p>
+                            <p> Priority: {{ homework.priority }} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row detail__options">
+                    <!-- actionにすることによって今のURLに付け足すのではなくview_homeworkにリダイレクトする-->
+                    <!-- redirect to view/view-homework.html -->
+                    <form action="{% url 'finished_homework' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="homework_id" value="{{ homework.id }}" />
+                        <button class="btn btn--primary">Finish</button>
+                    </form>
+                    <form action="{% url 'delete_homework' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="homework_id" value="{{ homework.id }}" />
+                        <button class="btn btn--primary">Delete</button>
+                    </form>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="row detail__options">
-          <!-- actionにすることによって今のURLに付け足すのではなくview_homeworkにリダイレクトする-->
-          <!-- redirect to view/view-homework.html -->
-          <form action="{% url 'finished_homework' %}" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="homework_id" value="{{ homework.id }}" />
-            <button class="btn btn--primary">Finish</button>
-        </form>
-        <form action="{% url 'view_homework' %}" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="homework_id" value="{{ homework.id }}" />
-            <button class="btn btn--primary">Delete</button>
-        </form>
-        </div>
-      </div>
-    </div>
-
     <!-- Footer -->
     <footer id="footer"></footer>
     {% include '../templates/footer.html' %}

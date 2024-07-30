@@ -52,62 +52,48 @@
                             class="logo__img logo__img--signin"
                         />
                     </a>
-                    <h1 class="auth__heading auth__heading--signin">Sign in</h1>
+                    <h1 class="auth__heading">Sign in</h1>
                     <p class="auth__desc">Welcome back!</p>
-                    <form action="./index-logined.html" class="form auth__form">
+                    <form method="post" action="{% url 'sign_in' %}" class="form auth__form">
+                        {% csrf_token %}
                         <div class="form__group">
                             <div class="form__text-input">
                                 <input
                                     type="text"
-                                    id="sdt"
-                                    placeholder="Phone number"
+                                    name="username"
+                                    id="username"
+                                    placeholder="Username"
                                     class="form__input"
-                                    required
-                                    autocomplete="username"
+                                    required 
                                 />
                                 <img src="" alt="" class="form__input-icon" />
                             </div>
-                            <p class="form__error">
-                                Phone number was not in a correct format
-                            </p>
+                            <p class="form__error">{{ form.username.errors }}</p>
                         </div>
                         <div class="form__group">
                             <div class="form__text-input">
                                 <input
                                     type="password"
+                                    name="password"
                                     id="password"
                                     placeholder="Password"
                                     class="form__input"
                                     required
                                     minlength="6"
-                                    autocomplete="current-password"
                                 />
                                 <img src="" alt="" class="form__input-icon" />
                             </div>
-                            <p class="form__error">At least 6 digits</p>
+                            <p class="form__error">{{ form.password.errors }}</p>
                         </div>
-
-                        <div class="form__group form__group--inline">
-                            <a href="" class="auth__link auth__link--signin"
-                                >Forgot your password?</a
-                            >
+                        <!--deleted "forgot your password?" link-->
+                        <div class="form__group auth__btn-group">
+                            <button type="submit" class="btn btn--outline auth__btn btn--no-margin">Sign in</button>
                         </div>
-                        <a href="./index-logined.html">
-                            <button
-                                class="btn btn--outline auth__btn btn--no-margin"
-                            >
-                                Sign in
-                            </button>
-                        </a>
-                        <a href="./sign-up.html">
-                            <div class="form__group auth__btn-group">
-                                <button type="button" class="btn btn--primary">
-                                    Sign up
-                                </button>
-                            </div>
+                        <a href="{% url 'sign_up' %}">
+                            <button type="button" class="btn btn--primary">Sign up</button>
                         </a>
                     </form>
-                    <p style="color: red" id="loginResult"></p>
+                    <p style="color: red" id="loginResult">{{ form.non_field_errors }}</p>
                 </div>
             </div>
         </main>
