@@ -25,7 +25,7 @@
       sizes="16x16"
       href="{% static 'assets/favicon/favicon-16x16.png' %}"
     />
-    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <link rel="manifest" href="{% static 'assets/favicon/site.webmanifest' %}" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
@@ -37,8 +37,8 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../js/SignUp.js" defer></script>
-    <script src="../assets/js/scripts.js"></script>
+    <script src="{% static 'js/SignUp.js' %}" defer></script>
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
   </head>
 
   <body>
@@ -56,14 +56,15 @@
           </div>
         </div>
         <div class="row form__container">
-          <form action="" class="add-new__form">
+          <form action="{% url 'add_homework' %}" method="POST" class="add-new__form">
+            {% csrf_token %}
             <h2 class="add-homework__heading">Homework name:</h2>
             <div class="row">
               <div class="form__group">
                 <div class="form__text-input">
                   <input
                     type="text"
-                    name=""
+                    name="name"
                     id="full-name"
                     placeholder="Type your homework name"
                     class="form__input"
@@ -82,8 +83,8 @@
                   <label for="due-date"></label>
                   <input
                     type="date"
-                    name="due-date"
-                    id="due-date"
+                    name="due_date"
+                    id="due_date"
                     placeholder="Due date"
                     class="form__input"
                   />
@@ -116,20 +117,35 @@
                 </div>
               </div>
             </div>
+
+            <!--Noteを追加-->
+            <h3 class="add-homework__heading">Note:</h3>
+            <div class="row">
+              <div class="form__group">
+                <div class="form__text-input">
+                  <textarea
+                    name="note"
+                    id="note"
+                    placeholder="Add any additional notes here"
+                    class="form__input"
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="row"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+              "
+            >
+              <button type="submit" class="btn btn--primary">Add new homework</button>
+            </div>
           </form>
-        </div>
-        <div
-          class="row"
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-          "
-        >
-          <a href="./view-homework.html"
-            ><button class="btn btn--primary">Add new homework</button></a
-          >
         </div>
       </div>
     </div>

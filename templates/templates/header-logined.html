@@ -1,51 +1,55 @@
+{% load static %}
+
 <div class="container">
-    <div class="top-bar">
-        <!-- More -->
+  <div class="top-bar">
+    <!-- More -->
 
-        <!-- Logo -->
-        <a href="../view/index-logined.html" class="logo">
-            <img src="../assets/img/only-text.png" alt="" class="logo__img" />
-        </a>
+    <!-- Logo -->
+    <a href="../view/index-logined.html" class="logo">
+      <img
+        src="{%static 'assets/img/only-text.png' %}"
+        alt=""
+        class="logo__img"
+      />
+    </a>
 
-        <!-- Navbar -->
-        <nav class="navbar">
-            <ul class="navbar__list">
-                <li class="navbar__item">
-                    <a href="../view/index-logined.html" class="navbar__link"
-                        >About app</a
-                    >
-                </li>
-                <li class="navbar__item">
-                    <a href="../view/view-homework.html" class="navbar__link"
-                        >View homework</a
-                    >
-                </li>
-                <li class="navbar__item">
-                    <a href="../view/add-homework.html" class="navbar__link"
-                        >Add new</a
-                    >
-                </li>
-                <li class="navbar__item">
-                    <a href="" class="navbar__link">Docs</a>
-                </li>
-                <!-- <li class="navbar__item">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul class="navbar__list">
+        <li class="navbar__item">
+          <a href="../view/index-logined.html" class="navbar__link"
+            >About app</a
+          >
+        </li>
+        <li class="navbar__item">
+          <a href="../view/view-homework.html" class="navbar__link"
+            >View homework</a
+          >
+        </li>
+        <li class="navbar__item">
+          <a href="../view/add-homework.html" class="navbar__link">Add new</a>
+        </li>
+        <li class="navbar__item">
+          <a href="" class="navbar__link">Docs</a>
+        </li>
+        <!-- <li class="navbar__item">
                     <a href="" class="navbar__link">Discussions</a>
                 </li> -->
-            </ul>
-        </nav>
+      </ul>
+    </nav>
 
-        <!-- Actions -->
-        <div class="top-act">
-            <div class="top-act__user">
-                <img
-                    src="../assets/img/avatar.jpg"
-                    alt=""
-                    class="top-act__avatar"
-                />
+    <!-- Actions -->
+    <div class="top-act">
+      <div class="top-act__user">
+        <img
+          src="{% static 'assets/img/avatar.jpg' %}"
+          alt=""
+          class="top-act__avatar"
+        />
 
-                <div class="dropdown">
-                    <div class="dropdown__inner">
-                        <!-- <a href="../view/profile.html" class="dropdown-action">
+        <div class="dropdown">
+          <div class="dropdown__inner">
+            <!-- <a href="../view/profile.html" class="dropdown-action">
                             Thông tin tài khoản
                             <p class="dropdown-balance" id="Wallet"></p>
                         </a>
@@ -55,12 +59,12 @@
                         >
                             Lịch sử mua hàng
                         </a> -->
-                        <a href="/index.html" class="dropdown-action"
-                            ><p style="font-weight: 500">Log out</p></a
-                        >
-                    </div>
-                </div>
-            </div>
+            <a href="/index.html" class="dropdown-action"
+              ><p style="font-weight: 500">Log out</p></a
+            >
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Homework
+from .forms import HomeworkForm
 
 def home(request):
     return render(request, 'index.html')
@@ -14,13 +15,6 @@ def index_logined(request):
     return render(request, 'view/index-logined.html')
 
 def view_homework(request):
-    #引き数でhomework_idが来た場合のみにこのif文を実行（そのhomeworkを削除）
-    if request.method == 'POST':
-        homework_id = request.POST.get('homework_id')
-        if homework_id:
-            homework = get_object_or_404(Homework, id=homework_id)
-            homework.delete()
-
     sort_by = request.GET.get('sort_by','priority')
     if sort_by == 'due_date':
         homework_list = Homework.objects.filter(finished=False).order_by('due_date')
@@ -30,8 +24,25 @@ def view_homework(request):
     context = { 'homework_list':homework_list }
     return render(request, 'view/view-homework.html', context)
 
+def delete_homework(request):
+    if request.method == 'POST':
+        homework_id = request.POST.get('homework_id')
+        if homework_id:
+            homework = get_object_or_404(Homework, id=homework_id)
+            homework.delete()
+        return redirect('view_homework')
+
+    return render(request, 'error.html', {'message': 'Invalid request method'})
+
 def add_homework(request):
-    return render(request, 'view/add-homework.html')
+    if request.method == 'POST':
+        form = HomeworkForm(request.POST)
+        if form.is_valid():
+            form.save()  # データベースに保存
+            return redirect('view_homework')  # 成功後にリダイレクト
+    else:
+        form = HomeworkForm()
+    return render(request, 'view/add-homework.html', {'form': form})
 
 def homework_details(request, id):
     homework = get_object_or_404(Homework, id=id)

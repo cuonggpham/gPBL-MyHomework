@@ -74,12 +74,12 @@
                 <div class="row detail__options">
                     <!-- actionにすることによって今のURLに付け足すのではなくview_homeworkにリダイレクトする-->
                     <!-- redirect to view/view-homework.html -->
-                    <form action="{% url 'finished_homework' %}" method="post">
+                    <form action="{% url 'finished_homework' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="homework_id" value="{{ homework.id }}" />
                         <button class="btn btn--primary">Finish</button>
                     </form>
-                    <form action="{% url 'view_homework' %}" method="post">
+                    <form action="{% url 'delete_homework' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="homework_id" value="{{ homework.id }}" />
                         <button class="btn btn--primary">Delete</button>
@@ -87,7 +87,6 @@
                 </div>
             </div>
         </div>
-
     <!-- Footer -->
     <footer id="footer"></footer>
     {% include '../templates/footer.html' %}

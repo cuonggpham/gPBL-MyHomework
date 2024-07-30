@@ -17,9 +17,11 @@ urlpatterns = [
 
     path('view/view-homework.html', views.view_homework, name='view_homework'),
 
-    path('view/add-homework.html', views.add_homework),
+    path('view/add-homework.html', views.add_homework, name='add_homework'),
 
     path('view/homework-details.html/<int:id>/', views.homework_details, name='homework_details'),
 
     path('view/finished-homework.html', views.finished_homework, name='finished_homework'),
+
+    path('delete_homework/', views.delete_homework, name='delete_homework')
 ]
