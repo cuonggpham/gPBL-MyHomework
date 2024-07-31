@@ -1,10 +1,10 @@
 {
-    "name": "gpbl-web",
+    "name": "homework-web-application",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "sass": "sass scss:assets/css -w"
+        "sass": "sass scss:static/assets/css -w"
     },
     "keywords": [],
     "author": "",

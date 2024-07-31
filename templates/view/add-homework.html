@@ -1,161 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add new homework</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add new homework</title>
 
-    {% load static %}
+        {% load static %}
 
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'assets/favicon/apple-touch-icon.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{% static 'assets/favicon/favicon-32x32.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{% static 'assets/favicon/favicon-16x16.png' %}"
-    />
-    <link rel="manifest" href="{% static 'assets/favicon/site.webmanifest' %}" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="{% static 'assets/favicon/apple-touch-icon.png' %}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{% static 'assets/favicon/favicon-32x32.png' %}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="{% static 'assets/favicon/favicon-16x16.png' %}"
+        />
+        <link
+            rel="manifest"
+            href="{% static 'assets/favicon/site.webmanifest' %}"
+        />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
 
-    <!-- Font -->
-    <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
+        <!-- Font -->
+        <link
+            rel="stylesheet"
+            href="{% static 'assets/fonts/stylesheet.css' %}"
+        />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        <!-- Styles -->
+        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="{% static 'js/SignUp.js' %}" defer></script>
-    <script src="{% static 'assets/js/scripts.js' %}"></script>
-  </head>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="{% static 'js/SignUp.js' %}" defer></script>
+        <script src="{% static 'assets/js/scripts.js' %}"></script>
+    </head>
 
-  <body>
-    <!-- Header -->
-    <header id="header" class="header"></header>
-    {% if user.is_authenticated %}
-        {% include '../templates/header-logined.html' %}
-    {% else %}
-        {% include '../templates/header.html' %}
-    {% endif %}
+    <body>
+        <!-- Header -->
+        <header id="header" class="header">
+            {% if user.is_authenticated %} {% include
+            '../templates/header-logined.html' %} {% else %} {% include
+            '../templates/header.html' %} {% endif %}
+        </header>
 
-    <!-- Main -->
-    <div class="main-first">
-      <div class="container">
-        <div class="row">
-          <!-- Hero title -->
-          <div class="col-12">
-            <h1 class="page__title">Add New Homework</h1>
-          </div>
-        </div>
-        <div class="row form__container">
-          <form action="{% url 'add_homework' %}" method="POST" class="add-new__form">
-            {% csrf_token %}
-            <h2 class="add-homework__heading">Homework name:</h2>
-            <div class="row">
-              <div class="form__group">
-                <div class="form__text-input">
-                  <input
-                    type="text"
-                    name="name"
-                    id="full-name"
-                    placeholder="Type your homework name"
-                    class="form__input"
-                    required=""
-                  />
-                  <img src="" alt="" class="form__input-icon" />
+        <!-- Main -->
+        <div class="main-first">
+            <div class="container">
+                <div class="row">
+                    <!-- Hero title -->
+                    <div class="col-12">
+                        <h1 class="page__title">Add New Homework</h1>
+                    </div>
                 </div>
-                <p class="form__error"></p>
-              </div>
-            </div>
-
-            <h3 class="add-homework__heading">Due date:</h3>
-            <div class="row">
-              <div class="form__group">
-                <div class="form__text-input">
-                  <label for="due-date"></label>
-                  <input
-                    type="date"
-                    name="due_date"
-                    id="due_date"
-                    placeholder="Due date"
-                    class="form__input"
-                  />
-                  <img src="" alt="" class="form__input-icon" />
-                </div>
-              </div>
-            </div>
-
-            <h3 class="add-homework__heading">Difficulty:</h3>
-            <div class="row">
-              <div class="difficulty__desc">
-                <p>Choose your homework's difficulty</p>
-              </div>
-              <div class="difficulty__options">
-                <div class="form__group--options">
-                  <div class="form__select-input">
-                    <label for="difficulty"></label>
-                    <select
-                      name="difficulty"
-                      id="difficulty"
-                      class="form__input"
+                <div class="row form__container">
+                    <form
+                        action="{% url 'add_homework' %}"
+                        method="POST"
+                        class="add-new__form"
                     >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
+                        {% csrf_token %}
+                        <h2 class="add-homework__heading">Homework name:</h2>
+                        <div class="row">
+                            <div class="form__group">
+                                <div class="form__text-input">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="full-name"
+                                        placeholder="Type your homework name"
+                                        class="form__input"
+                                        required=""
+                                    />
+                                    <img
+                                        src=""
+                                        alt=""
+                                        class="form__input-icon"
+                                    />
+                                </div>
+                                <p class="form__error"></p>
+                            </div>
+                        </div>
 
-            <!--Noteを追加-->
-            <h3 class="add-homework__heading">Note:</h3>
-            <div class="row">
-              <div class="form__group">
-                <div class="form__text-input">
-                  <textarea
-                    name="note"
-                    id="note"
-                    placeholder="Add any additional notes here"
-                    class="form__input"
-                    rows="4"
-                  ></textarea>
-                </div>
-              </div>
-            </div>
+                        <h3 class="add-homework__heading">Due date:</h3>
+                        <div class="row">
+                            <div class="form__group">
+                                <div class="form__text-input">
+                                    <label for="due-date"></label>
+                                    <input
+                                        type="date"
+                                        name="due_date"
+                                        id="due_date"
+                                        placeholder="Due date"
+                                        class="form__input"
+                                    />
+                                    <img
+                                        src=""
+                                        alt=""
+                                        class="form__input-icon"
+                                    />
+                                </div>
+                            </div>
+                        </div>
 
-            <div
-              class="row"
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 30px;
-              "
-            >
-              <button type="submit" class="btn btn--primary">Add new homework</button>
+                        <h3 class="add-homework__heading">Difficulty:</h3>
+                        <div class="row">
+                            <div class="difficulty__desc">
+                                <p>Choose your homework's difficulty</p>
+                            </div>
+                            <div class="difficulty__options">
+                                <div class="form__group--options">
+                                    <div class="form__select-input">
+                                        <label for="difficulty"></label>
+                                        <select
+                                            name="difficulty"
+                                            id="difficulty"
+                                            class="form__input"
+                                        >
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Noteを追加-->
+                        <h3 class="add-homework__heading">Note:</h3>
+                        <div class="row">
+                            <div class="form__group">
+                                <div class="form__text-input">
+                                    <textarea
+                                        name="note"
+                                        id="note"
+                                        placeholder="Add any additional notes here"
+                                        class="form__input"
+                                        rows="4"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="row"
+                            style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-bottom: 30px;
+                            "
+                        >
+                            <button type="submit" class="btn btn--primary">
+                                Add new homework
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
-    </div>
 
-    <!-- Footer -->
-    <footer id="footer"></footer>
-    {% include '../templates/footer.html' %}
-  </body>
+        <!-- Footer -->
+        <footer id="footer"></footer>
+        {% include '../templates/footer.html' %}
+    </body>
 </html>
