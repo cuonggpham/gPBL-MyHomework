@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.decorators import login_required
 from .models import Homework
@@ -8,6 +8,10 @@ from .forms import HomeworkForm
 
 def home(request):
     return render(request, 'index.html')
+
+def sign_out(request):
+    logout(request)
+    return redirect('index')
 
 def sign_in(request):
     if request.method == 'POST':
@@ -31,6 +35,7 @@ def sign_up(request):
         form = UserCreationForm()
     return render(request, 'view/sign-up.html', {'form': form})
 
+@login_required
 def index_logined(request):
     return render(request, 'view/index-logined.html')
 

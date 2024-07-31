@@ -7,7 +7,9 @@ urlpatterns = [
     #path to see admin screen 管理画面へのパス
     path('admin/', admin.site.urls),
 
-    path('', views.home),
+    path('', views.home, name='index'),
+
+    path('sign_out/', views.sign_out, name='sign_out'),
 
     path('view/sign-in.html', views.sign_in, name='sign_in'),
 

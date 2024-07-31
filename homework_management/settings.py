@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = 'sign_in'
+
 
 # Application definition
 
