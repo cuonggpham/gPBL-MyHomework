@@ -44,7 +44,11 @@
   <body>
     <!-- Header -->
     <header id="header" class="header"></header>
-    {% include '../templates/header.html' %}
+    {% if user.is_authenticated %}
+        {% include '../templates/header-logined.html' %}
+    {% else %}
+        {% include '../templates/header.html' %}
+    {% endif %}
 
     <!-- Main -->
     <div class="main-first">

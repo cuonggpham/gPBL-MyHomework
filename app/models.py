@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Homework(models.Model):
+    user = models.ForeignKey(User, null=User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200) #宿題名
     note = models.TextField(blank=True, default='') #メモ
     due_date = models.DateField() #期限
