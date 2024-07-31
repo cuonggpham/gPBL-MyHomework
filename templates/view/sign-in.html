@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign in </title>
+        <title>Sign in</title>
 
         {% load static %}
 
@@ -30,7 +30,10 @@
         <meta name="theme-color" content="#ffffff" />
 
         <!-- Font -->
-        <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
+        <link
+            rel="stylesheet"
+            href="{% static 'assets/fonts/stylesheet.css' %}"
+        />
 
         <!-- Styles -->
         <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
@@ -54,7 +57,11 @@
                     </a>
                     <h1 class="auth__heading">Sign in</h1>
                     <p class="auth__desc">Welcome back!</p>
-                    <form method="post" action="{% url 'sign_in' %}" class="form auth__form">
+                    <form
+                        method="post"
+                        action="{% url 'sign_in' %}"
+                        class="form auth__form"
+                    >
                         {% csrf_token %}
                         <div class="form__group">
                             <div class="form__text-input">
@@ -64,11 +71,13 @@
                                     id="username"
                                     placeholder="Username"
                                     class="form__input"
-                                    required 
+                                    required
                                 />
                                 <img src="" alt="" class="form__input-icon" />
                             </div>
-                            <p class="form__error">{{ form.username.errors }}</p>
+                            <p class="form__error">
+                                {{ form.username.errors }}
+                            </p>
                         </div>
                         <div class="form__group">
                             <div class="form__text-input">
@@ -83,17 +92,30 @@
                                 />
                                 <img src="" alt="" class="form__input-icon" />
                             </div>
-                            <p class="form__error">{{ form.password.errors }}</p>
+                            <p class="form__error">
+                                {{ form.password.errors }}
+                            </p>
                         </div>
                         <!--deleted "forgot your password?" link-->
                         <div class="form__group auth__btn-group">
-                            <button type="submit" class="btn btn--outline auth__btn btn--no-margin">Sign in</button>
+                            <button
+                                type="submit"
+                                class="btn btn--outline auth__btn btn--no-margin"
+                            >
+                                Sign in
+                            </button>
                         </div>
                         <a href="{% url 'sign_up' %}">
-                            <button type="button" class="btn btn--primary">Sign up</button>
+                            <div class="form__group auth__btn-group">
+                                <button type="button" class="btn btn--primary">
+                                    Sign up
+                                </button>
+                            </div>
                         </a>
                     </form>
-                    <p style="color: red" id="loginResult">{{ form.non_field_errors }}</p>
+                    <p style="color: red" id="loginResult">
+                        {{ form.non_field_errors }}
+                    </p>
                 </div>
             </div>
         </main>
