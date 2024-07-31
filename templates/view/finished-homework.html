@@ -25,7 +25,7 @@
             sizes="16x16"
             href="{% static 'assets/favicon/favicon-16x16.png' %}"
         />
-        <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+        <link rel="manifest" href="{% static 'assets/favicon/site.webmanifest' %}" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
@@ -40,8 +40,8 @@
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="../js/SignUp.js" defer></script>
-        <script src="../assets/js/scripts.js"></script>
+        <script src="{% static 'js/SignUp.js' %}" defer></script>
+        <script src="{% static 'assets/js/scripts.js' %}"></script>
     </head>
 
     <body>
@@ -75,8 +75,7 @@
                                     </h2>
                                     <div class="homework__desc">
                                         <p class="homework__duedate">
-                                            Due at: {{
-                                            homework.due_date|date:"m/d/Y" }}
+                                            Due at: {{ homework.due_date|date:"m/d/Y" }}
                                         </p>
                                         {% if homework.note %}
                                         <p class="homework__note">

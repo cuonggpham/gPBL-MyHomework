@@ -31,7 +31,7 @@
             sizes="16x16"
             href="{% static 'assets/favicon/favicon-16x16.png' %}"
         />
-        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="manifest" href="{% static 'assets/favicon/site.webmanifest' %}" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
@@ -43,8 +43,8 @@
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./js/GetProducts.js" defer></script>
-        <script src="./assets/js/scripts.js"></script>
+        <script src="{% static 'js/GetProducts.js' %}" defer></script>
+        <script src="{% static 'assets/js/scripts.js' %}"></script>
     </head>
 
     <body>
@@ -91,7 +91,7 @@
                         </p>
                         <div class="main-page__search">
                             <img
-                                src="./assets/icons/search.svg"
+                                src="{% static 'assets/icons/search.svg' %}"
                                 alt=""
                                 class="main-page__search--icon"
                             />
@@ -116,7 +116,7 @@
                                 class="main-page__img"
                             />
                             <img
-                                src="./assets/img/kid.svg"
+                                src="{% static 'assets/img/kid.svg' %}"
                                 alt=""
                                 class="main-page__kid"
                             />
@@ -146,7 +146,7 @@
                                     />
                                 </figure> -->
                             <img
-                                src="./assets/img/main-page-layer.svg"
+                                src="{% static 'assets/img/main-page-layer.svg' %}"
                                 alt=""
                                 class="main-page__img"
                             />
