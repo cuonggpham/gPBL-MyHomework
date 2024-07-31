@@ -1,123 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Homework</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Homework</title>
 
-    {% load static %}
+        {% load static %}
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="{% static 'assets/favicon/favicon.ico' %}"
-    />
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="{% static 'assets/favicon/favicon.ico' %}"
+        />
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'assets/favicon/apple-touch-icon.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{% static 'assets/favicon/favicon-32x32.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{% static 'assets/favicon/favicon-16x16.png' %}"
-    />
-    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="{% static 'assets/favicon/apple-touch-icon.png' %}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{% static 'assets/favicon/favicon-32x32.png' %}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="{% static 'assets/favicon/favicon-16x16.png' %}"
+        />
+        <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
 
-    <!-- Font -->
-    <link rel="stylesheet" href="{% static 'assets/fonts/stylesheet.css' %}" />
+        <!-- Font -->
+        <link
+            rel="stylesheet"
+            href="{% static 'assets/fonts/stylesheet.css' %}"
+        />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        <!-- Styles -->
+        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./js/GetProducts.js" defer></script>
-    <script src="../assets/js/scripts.js"></script>
-  </head>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./js/GetProducts.js" defer></script>
+        <script src="../assets/js/scripts.js"></script>
+    </head>
 
-  <body>
-    <!-- Header -->
-    <header id="header" class="header"></header>
-    {% include '../templates/header-logined.html' %}
+    <body>
+        <!-- Header -->
+        <header id="header" class="header">
+            {% include '../templates/header-logined.html' %}
+        </header>
 
-    <!-- Main -->
-    <div class="main-first" id="about-app">
-      <div class="container">
-        <div class="row">
-          <!-- Hero content -->
-          <div class="col-6 main-page">
-            <h1 class="main-page__title">
-              A super website for you to manage your
-              <span
-                style="
-                  background: linear-gradient(
-                    269deg,
-                    #a6cf4a 16.43%,
-                    #ffd05a 37.58%,
-                    #fd60a9 54.54%
-                  );
-                  background-clip: text;
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  font-size: 70px;
-                  font-style: normal;
-                  font-weight: 800;
-                  line-height: normal;
-                "
-                >HOMEWORK
-              </span>
-            </h1>
-            <p class="main-page__desc">
-              Our website helps students effortlessly manage, submit, and edit
-              assignments. With features like deadline reminders and task
-              prioritization, staying on track is easy. Collaborative tools
-              enable seamless group work, and you can access everything from any
-              device.
-            </p>
-            <div class="main-page__search">
-              <img
-                src="{% static 'assets/icons/search.svg' %}"
-                alt=""
-                class="main-page__search--icon"
-              />
-              <form action="" class="search">
-                <input
-                  type="text"
-                  name=""
-                  id="full-name"
-                  placeholder="Search for homework"
-                  class="form__input"
-                  required=""
-                />
-              </form>
-            </div>
-          </div>
-          <!-- Hero media -->
-          <div class="col-6 main-page main-page__media">
-            <div class="main-page__img-container">
-              <img
-                src="{% static 'assets/img/myhomework-logo.png' %}"
-                alt=""
-                class="main-page__img"
-              />
-              <img
-                src="{% static 'assets/img/kid.svg' %}"
-                alt=""
-                class="main-page__kid"
-              />
-              <!-- <figure>
+        <!-- Main -->
+        <div class="main-first" id="about-app">
+            <div class="container">
+                <div class="row">
+                    <!-- Hero content -->
+                    <div class="col-6 main-page">
+                        <h1 class="main-page__title">
+                            A super website for you to manage your
+                            <span
+                                style="
+                                    background: linear-gradient(
+                                        269deg,
+                                        #a6cf4a 16.43%,
+                                        #ffd05a 37.58%,
+                                        #fd60a9 54.54%
+                                    );
+                                    background-clip: text;
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    font-size: 70px;
+                                    font-style: normal;
+                                    font-weight: 800;
+                                    line-height: normal;
+                                "
+                                >HOMEWORK
+                            </span>
+                        </h1>
+                        <p class="main-page__desc">
+                            Our website helps students effortlessly manage,
+                            submit, and edit assignments. With features like
+                            deadline reminders and task prioritization, staying
+                            on track is easy. Collaborative tools enable
+                            seamless group work, and you can access everything
+                            from any device.
+                        </p>
+                        <div class="main-page__search">
+                            <img
+                                src="{% static 'assets/icons/search.svg' %}"
+                                alt=""
+                                class="main-page__search--icon"
+                            />
+                            <form action="" class="search">
+                                <input
+                                    type="text"
+                                    name=""
+                                    id="full-name"
+                                    placeholder="Search for homework"
+                                    class="form__input"
+                                    required=""
+                                />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Hero media -->
+                    <div class="col-6 main-page main-page__media">
+                        <div class="main-page__img-container">
+                            <img
+                                src="{% static 'assets/img/myhomework-logo.png' %}"
+                                alt=""
+                                class="main-page__img"
+                            />
+                            <img
+                                src="{% static 'assets/img/kid.svg' %}"
+                                alt=""
+                                class="main-page__kid"
+                            />
+                            <!-- <figure>
                                     <img
                                         src="../assets/img/ellipse.svg"
                                         alt=""
@@ -142,76 +147,78 @@
     
                                     />
                                 </figure> -->
-              <img
-                src="../assets/img/main-page-layer.svg"
-                alt=""
-                class="main-page__img"
-              />
+                            <img
+                                src="{% static 'assets/img/main-page-layer.svg' %}"
+                                alt=""
+                                class="main-page__img"
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="main-second" id="view-homework">
-      <div class="container">
-        <div class="row">
-          <!-- Hero media -->
-          <div class="col-6 main-page__media">
-            <img
-              src="{% static 'assets/img/viewhomework.png' %}"
-              alt=""
-              class="main-page__view-homework"
-            />
-          </div>
-          <!-- Hero content -->
-          <div class="col-6 main-page">
-            <h1 class="main-page__title">View homework</h1>
-            <p class="main-page__desc">
-              See what is up-coming next and Assign your homework easily. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Velit libero
-              nostrum aspernatur error doloremque nesciunt ipsum, culpa sint est
-              aut consequuntur laboriosam enim commodi labore? Praesentium
-              exercitationem aliquam repellat. Ut!
-            </p>
-            <a href="./view-homework.html">
-              <button class="btn">Click here</button>
-            </a>
-          </div>
+        <div class="main-second" id="view-homework">
+            <div class="container">
+                <div class="row">
+                    <!-- Hero media -->
+                    <div class="col-6 main-page__media">
+                        <img
+                            src="{% static 'assets/img/viewhomework.png' %}"
+                            alt=""
+                            class="main-page__view-homework"
+                        />
+                    </div>
+                    <!-- Hero content -->
+                    <div class="col-6 main-page">
+                        <h1 class="main-page__title">View homework</h1>
+                        <p class="main-page__desc">
+                            See what is up-coming next and Assign your homework
+                            easily. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Velit libero nostrum aspernatur
+                            error doloremque nesciunt ipsum, culpa sint est aut
+                            consequuntur laboriosam enim commodi labore?
+                            Praesentium exercitationem aliquam repellat. Ut!
+                        </p>
+                        <a href="./view-homework.html">
+                            <button class="btn">Click here</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="main-third" id="add-new">
-      <div class="container">
-        <div class="row">
-          <!-- Hero media -->
-          <div class="col-6 main-page__media">
-            <img
-              src="{% static 'assets/img/addnew.png' %}"
-              alt=""
-              class="main-page__add-new"
-            />
-          </div>
-          <!-- Hero content -->
-          <div class="col-6 main-page">
-            <h1 class="main-page__title">Add new homework</h1>
-            <p class="main-page__desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur hic praesentium recusandae possimus debitis? Ad, quam
-              saepe iste ullam et minima impedit laborum, ducimus iure quos ab
-              voluptatum asperiores quo.
-            </p>
-            <a href="add-homework.html">
-              <button class="btn">Click here</button>
-            </a>
-          </div>
+        <div class="main-third" id="add-new">
+            <div class="container">
+                <div class="row">
+                    <!-- Hero media -->
+                    <div class="col-6 main-page__media">
+                        <img
+                            src="{% static 'assets/img/addnew.png' %}"
+                            alt=""
+                            class="main-page__add-new"
+                        />
+                    </div>
+                    <!-- Hero content -->
+                    <div class="col-6 main-page">
+                        <h1 class="main-page__title">Add new homework</h1>
+                        <p class="main-page__desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Aspernatur hic praesentium recusandae possimus
+                            debitis? Ad, quam saepe iste ullam et minima impedit
+                            laborum, ducimus iure quos ab voluptatum asperiores
+                            quo.
+                        </p>
+                        <a href="add-homework.html">
+                            <button class="btn">Click here</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Footer -->
-    <footer id="footer"></footer>
-    {% include '../templates/footer.html' %}
-  </body>
+        <!-- Footer -->
+        <footer id="footer"></footer>
+        {% include '../templates/footer.html' %}
+    </body>
 </html>
