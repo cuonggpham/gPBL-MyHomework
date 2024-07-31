@@ -59,7 +59,7 @@ def delete_homework(request):
             homework.delete()
         return redirect('view_homework')
 
-    return render(request, 'error.html', {'message': 'Invalid request method'})
+    return render(request, 'view/homework-details.html')
 
 @login_required
 def add_homework(request):
